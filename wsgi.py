@@ -4,10 +4,18 @@ import requests
 application = Flask(__name__)
 
 
+def F(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return F(n - 1) + F(n - 2)
+
+
 @application.route("/")
 def hello():
-    r = requests.get("http://www.google.com")
-    return r.content
+    return F(100)
 
 
 if __name__ == "__main__":
