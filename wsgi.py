@@ -15,7 +15,7 @@ def F(n):
 
 @application.route("/")
 def hello():
-    return F(100)
+    return F(35)
 
 
 if __name__ == "__main__":
